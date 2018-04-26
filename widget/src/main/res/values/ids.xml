@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="retry_bt" type="id">false</item>
+    <item name="iv_picture_its" type="id">false</item>
+    <item name="tv_title_its" type="id">false</item>
+    <item name="spin_menu_its" type="id">false</item>
+    <item name="iv_picture_ite" type="id">false</item>
+    <item name="tv_title_ite" type="id">false</item>
+    <item name="et_content_ite" type="id">false</item>
+    <item name="iv_picture_iti" type="id">false</item>
+    <item name="tv_title_iti" type="id">false</item>
+    <item name="iv_arrow_iti" type="id">false</item>
+    <item name="iv_picture_itt" type="id">false</item>
+    <item name="tv_title_itt" type="id">false</item>
+    <item name="tv_content_itt" type="id">false</item>
+</resources>

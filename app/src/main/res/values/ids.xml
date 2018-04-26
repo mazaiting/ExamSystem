@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recycler_view" type="id">false</item>
+    <item name="swipe_layout" type="id">false</item>
+    <item name="toolbar" type="id">false</item>
+
+    <!--WelcomeActivity-->
+    <item name="welcome_tv_time" type="id">false</item>
+    <item name="login_et_username" type="id">false</item>
+    <item name="login_et_id_card" type="id">false</item>
+    <item name="login_iv_picture" type="id">false</item>
+    <item name="login_btn_login" type="id">false</item>
+    <item name="login_rl_take_photo" type="id">false</item>
+
+    <!--MainActivity-->
+    <item name="main_exam_logo" type="id">false</item>
+    <item name="main_exam_name" type="id">false</item>
+    <item name="main_exam_score" type="id">false</item>
+    <item name="main_exam_arrow" type="id">false</item>
+
+    <!--ExamMainActivity-->
+    <item name="exam_main_left_fragment" type="id">false</item>
+    <item name="exam_main_right_fragment" type="id">false</item>
+    <item name="exam_main_fragment_content" type="id">false</item>
+    <item name="exam_main_fab_upload" type="id">false</item>
+
+    <!--ExamTitleFragment-->
+    <item name="exam_title_tv_id" type="id">false</item>
+    <item name="exam_title_tv_option" type="id">false</item>
+    <item name="exam_title_tv_name" type="id">false</item>
+    <item name="exam_title_rl" type="id">false</item>
+    <item name="exam_title_tv_time" type="id">false</item>
+    <item name="exam_title_tv_analyze" type="id">false</item>
+
+    <!--ExamContentFragment-->
+    <item name="exam_content_tv_name" type="id">false</item>
+    <item name="exam_content_rg_option" type="id">false</item>
+    <item name="exam_content_rg_option_a" type="id">false</item>
+    <item name="exam_content_rg_option_b" type="id">false</item>
+    <item name="exam_content_rg_option_c" type="id">false</item>
+    <item name="exam_content_rg_option_d" type="id">false</item>
+    <item name="exam_content_tv_last_answer" type="id">false</item>
+    <item name="exam_content_tv_next_answer" type="id">false</item>
+    <item name="exam_content_ll_more_option" type="id">false</item>
+    <item name="exam_content_cb_option_a" type="id">false</item>
+    <item name="exam_content_cb_option_b" type="id">false</item>
+    <item name="exam_content_cb_option_c" type="id">false</item>
+    <item name="exam_content_cb_option_d" type="id">false</item>
+</resources>

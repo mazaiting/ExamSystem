@@ -1,0 +1,19 @@
+<resources>
+    <!--<string name="app_name">Widget</string>-->
+    <string name="text_empty">还没有数据呢！</string>
+    <string name="text_load_failed">加载失败！</string>
+    <string name="text_loading">正在加载…</string>
+    <string name="text_no_net">网络异常！</string>
+    <string name="text_retry">点击重试</string>
+    <string name="dialog_loading">正在加载中...</string>
+
+
+    <!--下拉列表显示的数据-->
+    <string-array name="its_view_menu">
+        <item>item0</item>
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+        <item>item4</item>
+    </string-array>
+</resources>

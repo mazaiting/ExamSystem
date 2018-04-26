@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExamSystem</string>
+    <string name="welcome_text">首页图片</string>
+    <string name="count_timer">跳过 %ds</string>
+    <string name="login_et_username">请输入用户姓名</string>
+    <string name="login_id_card">请输入用户身份证号</string>
+    <string name="login_btn_login">登陆</string>
+</resources>

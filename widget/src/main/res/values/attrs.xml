@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--SimpleMultiStateView-->
+    <declare-styleable name="SimpleMultiStateView">
+        <attr name="empty" format="reference"/>
+        <attr name="loading" format="reference"/>
+        <attr name="fail" format="reference"/>
+        <attr name="no_net" format="reference"/>
+    </declare-styleable>
+
+    <!--IetView-->
+    <declare-styleable name="IteView">
+        <attr name="pic_ite" format="reference"/>
+        <attr name="txt_ite" format="string|reference"/>
+        <attr name="hint_txt_ite" format="string|reference"/>
+    </declare-styleable>
+
+    <!--IeiView-->
+    <declare-styleable name="ItiView">
+        <attr name="pic_iti" format="reference"/>
+        <attr name="txt_iti" format="string|reference"/>
+    </declare-styleable>
+
+    <!--IesView-->
+    <declare-styleable name="ItsView">
+        <attr name="pic_its" format="reference"/>
+        <attr name="txt_its" format="string|reference"/>
+        <attr name="menu_its" format="reference"/>
+    </declare-styleable>
+
+    <!--IttView-->
+    <declare-styleable name="IttView">
+        <attr name="pic_itt" format="reference"/>
+        <attr name="title_itt" format="string|reference"/>
+        <attr name="content_itt" format="string|reference"/>
+    </declare-styleable>
+
+</resources>

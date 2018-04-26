@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+// Lambda添加
+apply plugin: 'me.tatarka.retrolambda'
+
+// 加载签名配置文件
+Properties props = new Properties()
+props.load(new FileInputStream(file("signing.properties")))
+
+// 定义一个打包时间
+def releaseTime() {
+    return new Date().format("dd_HH_mm", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+    defaultConfig {
+        applicationId "com.mazaiting.examsystem"
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    // 签名配置
+    signingConfigs {
+        release {
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD']
+//            storeFile file(props['KEYSTORE_FILE'])
+            storePassword props['KEYSTORE_PASSWORD']
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 签名配置
+//            signingConfig signingConfigs.release
+            // 是否调试
+            buildConfigField "String", "KEY_ALGORITHM", "\"abcdef\""
+            buildConfigField "String", "BASE_URL", "\"http://172.31.41.4:8080/\""
+            buildConfigField "String", "URL", "\"http://172.31.41.4:8080/zhgdApp/\""
+        }
+
+        release {
+//            使用BuildConfig.APP_DEBUG 获取值
+            buildConfigField "String", "KEY_ALGORITHM", "\"zaitingma@foxmail.com\""
+
+            minifyEnabled false
+            // 签名配置
+//            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+/*
+            applicationVariants.all {
+                variant ->
+                    variant.outputs.each { output ->
+                        def outputFile = output.outputFile
+
+                        if (null != outputFile && outputFile.name.endsWith('.apk')) {
+                            // 输出apk名称为debug_v1.0.0_2018_03_21.apk
+                            def isDebug = outputFile.name.split('.apk')[0].toString().split('-')[1]
+                            def fileName = "${isDebug}_v${defaultConfig.versionName}_${releaseTime()}.apk"
+                            // 控制输出APK的存放路径
+                            if (!"".equals(out_put_file)) {
+                                File output_dir = file(out_put_file)
+                                output.outputFile = new File(output_dir, fileName)
+                                println "输出文件位置：" + output.outputFile
+                            } else {
+                                output.outputFile = new File(outputFile.parent, fileName)
+                                println "输出文件位置：" + output.outputFile
+                            }
+                        }
+                    }
+            }*/
+        }
+    }
+
+    // Lambda添加
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:$supportVersion"
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile project(':easy')
+    compile project(':widget')
+    compile "com.android.support:support-v4:$supportVersion"
+
+    // --------------------------------注解相关------------------------------------
+    // 黄油刀---用于注解View
+//    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // Dagger2 注解
+    compile 'com.google.dagger:dagger:2.14'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.14'
+
+    // ---------------------------------内存检测------------------------------------
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    // --------------------------------注解相关------------------------------------
+    // 黄油刀---用于注解View
+//    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // Dagger2 注解
+    compile 'com.google.dagger:dagger:2.14'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.14'
+
+    // ---------------------------------内存检测------------------------------------
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    // 图片加载
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+}
