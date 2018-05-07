@@ -27,5 +27,11 @@ public class LoginContract {
          * @param imagePath 用户拍照图片路径
          */
         void login(String userName, String idCard, String imagePath);
+
+        /**
+         * 获取语言
+         * @return 语言字符
+         */
+        String getLanguage();
     }
 }

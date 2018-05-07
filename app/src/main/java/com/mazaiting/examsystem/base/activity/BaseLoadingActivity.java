@@ -16,7 +16,7 @@ import com.mazaiting.widget.fragment.LoadingDialogFragment;
  * @date 2018/3/23
  */
 
-public abstract class BaseLoadingActivity<T extends BasePresenter> extends BaseActivity<T>{
+public abstract class BaseLoadingActivity<T extends BasePresenter> extends BaseSettingActivity<T>{
 
     /**加载进度条*/
     protected LoadingDialogFragment mLoadingDialogFragment;

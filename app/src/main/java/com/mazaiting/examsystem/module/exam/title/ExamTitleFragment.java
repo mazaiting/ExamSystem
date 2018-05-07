@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.google.gson.Gson;
 import com.mazaiting.easy.app.IApplicationComponent;
 import com.mazaiting.examsystem.R;
 import com.mazaiting.examsystem.base.component.ApplicationComponentImpl;
@@ -186,6 +184,7 @@ public class ExamTitleFragment extends BaseRefreshFragment<ExamTitlePresenter> i
      * 关闭定时器
      */
     public void stopTimer() {
+        // 判断是否为空，如果不为空则取消定时器，并调用完成结束方法
         if (null != mCountDownTimer) {
             mCountDownTimer.cancel();
             mCountDownTimer.onFinish();
@@ -277,7 +276,7 @@ public class ExamTitleFragment extends BaseRefreshFragment<ExamTitlePresenter> i
      */
     private void updateAnswerTotal() {
         // 设置已答数目与总条数
-        mTvAnalyze.setText(getAnswerQuestion() + " / " + getTotalQuestion());
+        mTvAnalyze.setText(String.format(getString(R.string.exam_main_title_answer_total), getAnswerQuestion(), getTotalQuestion()));
     }
 
     /**
@@ -307,7 +306,7 @@ public class ExamTitleFragment extends BaseRefreshFragment<ExamTitlePresenter> i
             this.mPosition -= 1;
             setContentFragment();
         } else {
-            Toast.makeText(mContext, "已到第一题", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, getResources().getString(R.string.exam_main_title_arrived_first), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -319,7 +318,7 @@ public class ExamTitleFragment extends BaseRefreshFragment<ExamTitlePresenter> i
             this.mPosition += 1;
             setContentFragment();
         } else {
-            Toast.makeText(mContext, "已到最后一题", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, getResources().getString(R.string.exam_main_title_arrived_end), Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -27,6 +27,8 @@ public class Config extends BaseConfig{
     public static final String URL = "https://api-cn.faceplusplus.com/facepp/";
     /**存储身份证的KEY*/
     public static final String KEY_ID_CARD = "value_id_card";
+    /**存储语言的key*/
+    public static final String KEY_LANGUAGE = "value_language";
     /**试卷ID*/
     public static final String EXAM_ID = "exam_id";
     /**选项列表*/
