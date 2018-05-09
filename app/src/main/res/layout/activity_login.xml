@@ -13,6 +13,18 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
+        <TextView
+            android:id="@id/login_tv_language"
+            android:text="@string/login_setting_language"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="@dimen/sp_16"
+            android:clickable="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,8 +36,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                >
+                android:paddingRight="14dp">
 
                 <View
                     android:layout_width="0dp"
@@ -122,7 +133,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
-                        android:text="点击拍照"
+                        android:text="@string/login_tv_take_photo"
                         android:textSize="@dimen/sp_14"
                         android:textColor="@color/color_primary"
                         android:layout_marginStart="2dp"

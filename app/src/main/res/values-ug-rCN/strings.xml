@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ExamSystem</string>
+
+    <!--
+    ***************************************************************
+    ********************Internationalization***********************
+    ***************************************************************
+    -->
+    <!--LoginActivity-->
+    <string name="login_et_username">ئىسىم-فامىلىڭىزنى كىرگۈزۈڭ</string>
+    <string name="login_id_card">كىملىك نۇمۇرىڭىزنى كىرگۈزۈڭ</string>
+    <string name="login_tv_take_photo">رەسىمگە تارتىش كۇنۇپكىسىنى بىسىش</string>
+    <string name="login_btn_login">تىزىملىتىش</string>
+    <string name="login_login_success">تىزىملىتىش مۇۋاپىقىيەتلىك بۇلدى </string>
+    <string name="login_user_name_null">ئىسىم-فامىلە قۇرۇق قىلىشقا بولمايدۇ!!!</string>
+    <string name="login_id_card_null">كىملىك نۇمۇرى قۇرۇق قىلىشقا بولمايدۇ!!!</string>
+    <string name="login_picture_null">رەسىم قۇرۇق قىلىشقا بولمايدۇ!!!</string>
+
+    <!--MainActivity-->
+    <string name="main_friendly_reminder">دوستانە ئاگاھلاندۇرۇش</string>
+    <string name="main_friendly_reminder_message">ئىمتىھان تۇلۇق نۇمۇر 100 نۇمۇر ،60 نۇمۇر لاياقەتلىك، ئىمتىھان ۋاقتى 120 مىنۇت، ئارلىقتا چىقىپ كىتىشكە بولمايدۇ!!!</string>
+    <string name="main_can_not_answer">ئىمتىھان بېرىش تاماملاندى ، ئېرىشكەن نۇمۇر:  f%</string>
+
+    <!--ExamMainActivity-->
+    <string name="exam_main_friendly_reminder">دوستانە ئاگاھلاندۇرۇش</string>
+    <string name="exam_main_friendly_reminder_message">ئىمتىھان سۇئالىدا  %2$d سۇئال بار، سىز %1$d سۇئالغا جاۋاپ بەردىڭىز،    ئىمتىھان قەغىزىنى تاپشۇرامسىز؟</string>
+    <!--ExamMainActivity-ExamTitleFragment-->
+    <string name="exam_main_title_arrived_first">بىرىنجى سۇئالغا كەلدى</string>
+    <string name="exam_main_title_arrived_end">ئەڭ ئاخىرقى سۇئالغا كەلدى</string>
+</resources>

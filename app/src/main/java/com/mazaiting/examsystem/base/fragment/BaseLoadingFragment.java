@@ -58,10 +58,11 @@ public abstract class BaseLoadingFragment<T extends BasePresenter> extends BaseL
      * 关闭对话框
      */
     private void closeLoadingDialog() {
-        // 判断是否显示，如果显示则关闭
-        if (mLoadingDialogFragment.isVisible()) {
-            // 取消显示进度条Fragment
-            mLoadingDialogFragment.dismiss();
-        }
+        // 可用
+//        if (mLoadingDialogFragment.isCancelable()) {
+//            mLoadingDialogFragment.dismiss();
+//        }
+        // 可用，如果出现问题，使用上方的代码
+        mLoadingDialogFragment.dismissAllowingStateLoss();
     }
 }

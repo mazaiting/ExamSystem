@@ -16,7 +16,7 @@ import com.mazaiting.widget.fragment.LoadingDialogFragment;
  * @date 2018/3/23
  */
 
-public abstract class BaseLoadingActivity<T extends BasePresenter> extends BaseActivity<T>{
+public abstract class BaseLoadingActivity<T extends BasePresenter> extends BaseSettingActivity<T>{
 
     /**加载进度条*/
     protected LoadingDialogFragment mLoadingDialogFragment;
@@ -45,9 +45,12 @@ public abstract class BaseLoadingActivity<T extends BasePresenter> extends BaseA
      * 关闭对话框
      */
     private void closeLoadingDialog() {
-        if (mLoadingDialogFragment.isVisible()) {
-            mLoadingDialogFragment.dismiss();
-        }
+        // 可用
+//        if (mLoadingDialogFragment.isCancelable()) {
+//            mLoadingDialogFragment.dismiss();
+//        }
+        // 可用，如果出现问题，使用上方的代码
+        mLoadingDialogFragment.dismissAllowingStateLoss();
     }
 
     @Override

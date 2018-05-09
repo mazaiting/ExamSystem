@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 
 import com.mazaiting.examsystem.R;
 import com.mazaiting.examsystem.base.config.Config;
 import com.mazaiting.examsystem.module.exam.event.IEventProtocol;
 import com.mazaiting.examsystem.module.exam.title.ExamTitleFragment;
+import com.mazaiting.examsystem.module.welcome.WelcomeActivity;
 import com.mazaiting.examsystem.utils.DialogUtil;
+import com.mazaiting.examsystem.utils.LanguageUtil;
+import com.mazaiting.examsystem.utils.SharedPreferencesUtil;
 
 public class ExamMainActivity extends AppCompatActivity implements IEventProtocol {
     /**标题Fragment*/
@@ -30,6 +34,7 @@ public class ExamMainActivity extends AppCompatActivity implements IEventProtoco
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        onBeforeView();
         setContentView(R.layout.activity_exam_main);
 
         int examId = getIntent().getIntExtra(Config.EXAM_ID, 0);
@@ -39,6 +44,16 @@ public class ExamMainActivity extends AppCompatActivity implements IEventProtoco
                 .beginTransaction()
                 .add(R.id.exam_main_left_fragment, mTitleFragment)
                 .commit();
+    }
+
+    /**
+     * 设置View之前的操作
+     */
+    private void onBeforeView() {
+        // 获取语言
+        String language = SharedPreferencesUtil.getString(ExamMainActivity.this, Config.KEY_LANGUAGE);
+        // 设置语言
+        LanguageUtil.getInstance().setLanguage(ExamMainActivity.this, language);
     }
 
     /**
@@ -64,10 +79,9 @@ public class ExamMainActivity extends AppCompatActivity implements IEventProtoco
         int answer = mTitleFragment.getAnswerQuestion();
         // 判断是否符合要去
         if (answer <= total) {
-            String message = "本试卷共有 " + total + " 道题，您已回答 " + answer + " 道题，您确定要交卷么？";
             DialogUtil.getInstance().startPnDialog(
-                    "友情提示",
-                    message,
+                    getString(R.string.exam_main_friendly_reminder),
+                    String.format(getString(R.string.exam_main_friendly_reminder_message), total, answer),
                     (dialog, which) -> {
                         // 执行交卷
                         mTitleFragment.stopTimer();

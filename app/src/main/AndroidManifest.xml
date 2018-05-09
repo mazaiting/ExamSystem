@@ -42,8 +42,11 @@
             android:name=".module.main.MainActivity"
             android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".module.exam.ExamMainActivity"
-                  android:screenOrientation="landscape">
+        <activity
+            android:name=".module.exam.ExamMainActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".module.setting.SettingActivity">
         </activity>
     </application>
 

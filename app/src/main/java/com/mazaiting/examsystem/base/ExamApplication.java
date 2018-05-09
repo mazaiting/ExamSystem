@@ -22,7 +22,7 @@ public class ExamApplication extends BaseApplication {
     protected void initOtherConfig() {
         super.initOtherConfig();
 
-        initLeakCanary();
+//        initLeakCanary();
     }
 
     /**

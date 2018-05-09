@@ -1,5 +1,7 @@
 package com.mazaiting.examsystem.module.login;
 
+import android.text.TextUtils;
+
 import com.mazaiting.easy.utils.rx.BaseObserver;
 import com.mazaiting.easy.utils.rx.RxScheduler;
 import com.mazaiting.examsystem.api.UserApi;
@@ -55,6 +57,11 @@ public class LoginPresenter extends BaseNetPresenter<LoginContract.View> impleme
         }
     }
 
+    @Override
+    public String getLanguage() {
+        return getString(Config.KEY_LANGUAGE);
+    }
+
     /**
      * 保存身份证号码
      * @param idCard 身份证号码
@@ -62,4 +69,6 @@ public class LoginPresenter extends BaseNetPresenter<LoginContract.View> impleme
     private void saveIdCard(String idCard) {
         putString(Config.KEY_ID_CARD, idCard);
     }
+
+
 }

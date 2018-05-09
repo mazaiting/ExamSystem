@@ -40,7 +40,11 @@ public class MainActivity extends BaseRefreshToolbarActivity<MainPresenter> impl
     @Override
     public void initData() {
         // 下拉刷新
-        mSwipeLayout.setOnRefreshListener(() -> mPresenter.loadData());
+        mSwipeLayout.setOnRefreshListener(() -> {
+            mPresenter.loadData();
+            mSwipeLayout.setRefreshing(false);
+        });
+        // 加载数据
         mPresenter.loadData();
         // 设置条目点击
         mAdapter.setOnItemClickListener((adapter, view, position) -> {
@@ -48,13 +52,14 @@ public class MainActivity extends BaseRefreshToolbarActivity<MainPresenter> impl
             if (exam.getAnswer()) {
                 Toast.makeText(MainActivity.this, "可答", Toast.LENGTH_SHORT).show();
                 DialogUtil.getInstance().startPnDialog(
-                        "友情提示",
-                        "此时卷满分100分，60分及格，考试时间120分钟，中途不能退出！！！",
+                        getString(R.string.main_friendly_reminder),
+                        getString(R.string.main_friendly_reminder_message),
                         (dialog, which) -> ExamMainActivity.launcher(MainActivity.this, ExamMainActivity.class, exam.getId()),
                         getSupportFragmentManager()
                 );
             } else {
-                Toast.makeText(MainActivity.this, "此时卷已作答，分数为: " + exam.getScore(), Toast.LENGTH_SHORT).show();
+                String text = String.format(getString(R.string.main_can_not_answer), exam.getScore());
+                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,8 +1,46 @@
 <resources>
     <string name="app_name">ExamSystem</string>
     <string name="welcome_text">首页图片</string>
-    <string name="count_timer">跳过 %ds</string>
+
+    <!--
+    ***************************************************************
+    ****************************Format*****************************
+    ***************************************************************
+    -->
+    <!--拍照的图片文件名-->
+    <string name="login_photo_name">%ld.jpg</string>
+    <!--WelcomeActivity-->
+    <string name="welcome_count_timer">跳过 %ds</string>
+    <!--ExamMainActivity-ExamTitleFragment-->
+    <string name="exam_main_title_answer_total">%1$d / %2$d</string>
+    <!--
+    ***************************************************************
+    ********************Internationalization***********************
+    ***************************************************************
+    -->
+    <!--LoginActivity-->
     <string name="login_et_username">请输入用户姓名</string>
     <string name="login_id_card">请输入用户身份证号</string>
+    <string name="login_tv_take_photo">点击拍照</string>
     <string name="login_btn_login">登陆</string>
+    <string name="login_login_success">登陆成功</string>
+    <string name="login_user_name_null">用户名不能为空！！！</string>
+    <string name="login_id_card_null">身份证号不能为空！！！</string>
+    <string name="login_picture_null">图片不能为空！！！</string>
+    <!--多语言-->
+    <string name="login_setting_language">设置语言\nتىل بەلگىلەش</string>
+
+    <!--MainActivity-->
+    <string name="main_friendly_reminder">友情提示</string>
+    <string name="main_friendly_reminder_message">此时卷满分100分，60分及格，考试时间120分钟，中途不能退出！！！</string>
+    <string name="main_can_not_answer">此时卷已作答，分数为: %f</string>
+
+    <!--ExamMainActivity-->
+    <string name="exam_main_friendly_reminder">友情提示</string>
+    <string name="exam_main_friendly_reminder_message">本试卷共有 %1$d 道题，您已回答 %2$d 道题，您确定要交卷么？</string>
+    <!--ExamMainActivity-ExamTitleFragment-->
+    <string name="exam_main_title_arrived_first">已到第一题</string>
+    <string name="exam_main_title_arrived_end">已到最后一题</string>
+
+
 </resources>
